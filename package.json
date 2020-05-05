@@ -1,0 +1,26 @@
+{
+  "name": "findMyDentist",
+  "private": true,
+  "scripts": {
+    "start": "meteor run",
+    "test": "meteor test --once --driver-package meteortesting:mocha",
+    "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
+    "visualize": "meteor --production --extra-packages bundle-visualizer"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.1.2",
+    "@fortawesome/fontawesome-free": "^5.3.1",
+    "bcrypt": "^3.0.1",
+    "bulma-calendar": "^5.0.1",
+    "conversational-form": "^0.9.83",
+    "lodash": "^4.17.11",
+    "meteor-node-stubs": "^0.4.1"
+  },
+  "meteor": {
+    "mainModule": {
+      "client": "client/main.js",
+      "server": "server/main.js"
+    },
+    "testModule": "tests/main.js"
+  }
+}

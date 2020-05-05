@@ -1,0 +1,123 @@
+/*
+    Bulma compatabile Mobile CSS
+
+    - is-mob-container
+    - is-mob-head
+    - is-mob-body has-head has-footer
+    - is-mob-footer
+
+    - has-sidebar
+    - is-sidebar
+
+    - is-floating-menu
+*/
+
+.is-mob-container{
+    padding:0px;
+    margin:0px;
+    min-height:100vh;
+    height:auto;
+    width:100vw;
+    position:relative;
+    
+    /* background:#333; */
+}
+
+.is-mob-head{
+    min-height:55px;
+    height:auto;
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    background:#fff;
+    padding:10px;
+}
+.is-mob-footer{
+    min-height:55px;
+    height:auto;
+    width:100%;
+    position:fixed;
+    bottom:0;
+    left:0;
+    background:#fff;
+    padding:10px;
+}
+.has-mob-head{
+    padding-top:15px;
+}
+
+.has-mob-footer{
+    padding-bottom:15px;
+}
+/* action sheet */
+.is-mob-overlay{
+    width:100vw;
+    height:100vh;
+    background:  rgba(10, 10, 10, 0.3);
+    position:fixed;
+    top:0;
+    display:flex;
+    justify-content: center;
+    
+
+}
+.has-content-start{
+    align-items: flex-start;
+}
+.has-content-end{
+    align-items: flex-end;
+}
+.is-action-sheet{
+    width:80vw;
+    min-height:45vh;
+    height:auto;
+    background:#fff;
+    box-shadow:10px 10px 10px 100px(100,100,200,0.9);
+    padding:15px;
+    /* transform: translate(-50%, 0); */
+/* align-items:center; */
+    /* position:fixed; */
+    margin-bottom:50px;
+    /* margin:0px auto; */
+    border-radius:30px;
+    /* margin: auto; */
+    /* display:flex; */
+    /* align-items:center; */
+}
+
+.is-mob-dialog{
+    width:80vw;
+    min-height:20vh;
+    height:auto;
+    background:#fff;
+    box-shadow:10px 10px 10px 100px(100,100,200,0.9);
+    padding:15px;
+    border-radius:30px;
+    margin-top:30px;
+}
+
+.has-margin-bottom-5{
+    margin-bottom:10px !important;
+}
+
+.is-sheet-button{
+    width:100%;
+    display:block;
+}
+
+.has-content-center{
+    /*  */
+    display: flex !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+    text-align: center !important;
+    /* background:red; */
+
+}
+
+/*  */
+.has-in-content{
+    margin:10px 10px 10px 10px ;
+    padding:10px;
+}

@@ -1,0 +1,50 @@
+<template name="usersAside">
+        <div class="" id="fixedSide">
+            <!-- <h5>{{m}}</h5> -->
+            {{#if missingDemo}}
+            {{#each missingDemo '7'}}
+            {{#transition in="zoomIn:1000" out="bounceOut"}}
+            <div class="popover__wrapper">
+                <a href="#" class="setSetting" data-setting="requestInq" data-val="{{this}}">
+                    <figure class="image is-64x64 has-loading-img is-relative">{{#animate type="rollInx" delay="1000"}}<img
+                            src="http://i.pravatar.cc/96?img={{randomStatic '1' '70'}}" class="is-avatar is-loaded" id="missing-{{_id}}"><img
+                            src="images/avatar.png" class="is-avatar is-loading-image is-hidden">{{/animate}}</figure>
+                </a>
+                <div class="push popover__content border-line-{{dummy 'colors'}}">
+                    <div class="box is-borderless is-radiusless is-paddingless is-marginless">
+                        <div class="notification is-radiusless is-marginless">{{dummy 'names'}}</div>
+                        <p class="content notification is-white">
+                            Location : <span class="has-text-danger">workzone {{randomStatic '1' '15'}}</span><br />
+                            Phone No. {{randomStatic '50000000' '59999999'}} <br />
+                            <a href="#">Profile</a>
+                            <nav class="level is-mobile is-pulled-rightx">
+                                <div class="level-left">
+                                    <a class="level-item" aria-label="reply">
+                                        <span class="icon is-small">
+                                            <i class="fa fa-phone" aria-hidden="true"></i>
+                                        </span>
+                                    </a>
+                                    <a class="level-item" aria-label="retweet">
+                                        <span class="icon is-small">
+                                            <i class="fa fa-book" aria-hidden="true"></i>
+                                        </span>
+                                    </a>
+                                    <a class="level-item" aria-label="like">
+                                        <span class="icon is-small">
+                                            <i class="fa fa-tag" aria-hidden="true"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </nav>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--  -->
+            {{/transition}}
+            {{/each}}
+            {{else}}
+            <div class="loader">...</div>
+            {{/if}}
+        </div>
+    </template>

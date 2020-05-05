@@ -1,0 +1,58 @@
+<template name="mobileDemo">
+    <div class="is-mob-container section">
+        <div class="is-mob-head">
+            Header
+        </div>
+        <div class="is-mob-body has-mob-head has-mob-footer columns is-marginless">
+            {{#each repeat '50'}}
+            <div class="column is-12 is-marginlessx is-paddinglessx is-clipped has-margin-bottom-5">
+
+                <p class="box is-radiusless has-shadow-3 has-radius-3 is-clipped is-paddingless has-margin-bottom-5">
+                    <img src="http://dummy-images.com/abstract/dummy-480x270-Bottles.jpg">
+                    <div class="has-in-content">
+                        KJKLLK
+                    </div>
+                </p>
+            </div>
+            {{/each}}
+
+        </div>
+        <div class="is-mob-footer">
+            Footer
+        </div>
+
+
+    </div>
+    <!--  -->
+    <!-- {{>mobActionSheet}} -->
+    <!--  -->
+    <!-- {{>mobDialog}} -->
+</template>
+<!--  -->
+<template name="mobDialog">
+    <div class="is-mob-overlay has-content-start">
+        <div class="is-mob-dialog has-shadow-2 has-content-center">
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
+                    massa.</p>
+                <a href="#" class="button is-pirmary is-large is-primary is-fullwidth is-rounded">Do That</a>
+            </div>
+        </div>
+    </div>
+</template>
+<!--  -->
+<template name="mobActionSheet">
+    <div class="is-mob-overlay has-content-end">
+        <div class="is-action-sheet has-content-center has-shadow-2">
+            <div class="">
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
+                    massa.</p>
+                {{#each repeat 6}}
+                <div class="boxx has-radius-3 has-margin-bottom-5 is-sheet-button">
+                    <a href="#" class="button is-pirmary is-large is-primary is-fullwidth is-rounded">Do That</a>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</template>

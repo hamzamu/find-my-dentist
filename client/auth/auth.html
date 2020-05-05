@@ -1,0 +1,111 @@
+<template name="authLayout">
+    {{>Template.dynamic template=content}}
+</template>
+<template name="login">
+    <section class="hero is-light is-fullheight is-boldx lockBg lockBg-1x">
+        <!-- Hero head: will stick at the top -->
+        <div class="hero-head social">
+            <a href="/" class="button  is-radiusless is-primary has-margin-5 has-radius-1 icon is-medium setDefaultView">
+                <i class="fa fa-arrow-left"></i>
+            </a>
+        </div>
+        <!-- Hero content: will be in the middle -->
+        <div class="hero-body">
+            <form class="container loginForm" autocomplete="off">
+                <div class="columns is-centered is-marginless">
+                    {{#if getSetting 'register'}} {{>registerForm}} {{else}} {{>loginForm}} {{/if}}
+                </div>
+            </form>
+        </div>
+        <!-- Hero footer: will stick at the bottom -->
+        <div class="hero-foot">
+        </div>
+    </section>
+</template>
+<template name="lockScreen">
+    <section class="hero is-light is-fullheight lockBg lockBg-2x">
+        <!-- Hero head: will stick at the top -->
+        <div class="hero-head">
+        </div>
+        <!-- Hero content: will be in the middle -->
+        <div class="hero-body lockBg">
+            <div class="container">
+                <div class="columns is-centered is-marginless">
+                    <div class="column is-4 is-marginless is-paddingless">
+                        <div class="column is-12 has-text-centered is-marginless">
+                            <h1 class="title is-4">
+                                The Shuttle has been locked
+                            </h1>
+                            <h2 class="subtitle is-6">
+                                Confirm your ID to Pass
+                            </h2>
+                        </div>
+                        <div class="column is-12">
+                            <input type="password" class="input is-large is-radiusless pass" placeholder="**********"
+                                autocomplete="off">
+                        </div>
+                        <div class="column is-12">
+                            <a href="#" class="button is-large is-light is-fullwidth is-outlinedx is-radiusless unlock">Unlock</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Hero footer: will stick at the bottom -->
+        <div class="hero-foot">
+        </div>
+    </section>
+</template>
+<template name="loginForm">
+    <div class="column is-4 is-marginless is-paddingless ">
+        <div class="column is-12 has-text-centered">
+            <h1 class="title">
+                Login
+            </h1>
+        </div>
+        <div class="column is-12 is-offset-4x">
+            <input type="text" class="input is-large  has-radius-2 username" placeholder="username" autocomplete="off">
+        </div>
+        <div class="column is-12 is-offset-4x">
+            <input type="password" class="input is-large has-radius-2 password" placeholder="**********" autocomplete="off">
+        </div>
+        <div class="column is-12 is-offset-4x">
+            <input type="submit" class="button is-large has-radius-2 is-primary has-shadow-2 is-fullwidth doLogin"
+                value="Access">
+        </div>
+        <div class="column is-12 is-offset-4x">
+            <a href="#" class="buttonxx is-hiddenx is-smallx is-radiusless is-dark is-fullwidthx setSetting is-pulled-right"
+                data-setting="register" data-val="true">
+                <i class="fa fa-lock"></i> Request Permission</a>
+        </div>
+    </div>
+</template>
+<!-- Request/ Register Form -->
+<template name="registerForm">
+    <div class="column is-4 is-marginless is-paddingless">
+        <div class="column is-12 has-text-centered">
+            <h1 class="title">
+                Request Permission
+            </h1>
+        </div>
+        <div class="column is-12 is-offset-4x">
+            <input type="text" class="input is-large is-radiusless username  has-radius-2 " placeholder="username" autocomplete="off">
+        </div>
+        <div class="column is-12 is-offset-4x">
+            <input type="text" class="input is-large is-radiusless email  has-radius-2 " placeholder="email" autocomplete="off">
+        </div>
+        <div class="column is-12 is-offset-4x">
+            <input type="password" class="input is-large is-radiusless password  has-radius-2 " placeholder="**********" autocomplete="off">
+        </div>
+        <div class="column is-12 is-offset-4x">
+            <input type="password" class="input is-large is-radiusless password2  has-radius-2 " placeholder="**********" autocomplete="off">
+        </div>
+        <div class="column is-12 is-offset-4x">
+            <input type="submit" class="button is-large is-radiusless is-dark is-outlinedx is-fullwidth register  has-radius-2 " value="Request">
+        </div>
+        <div class="column is-12 is-offset-4x">
+            <a href="#" class=" is-smallx is-radiusless is-darkx is-fullwidth setSettings" data-settings="register:f">
+                <i class="fa fa-arrow-left"></i> Back</a>
+        </div>
+    </div>
+</template>

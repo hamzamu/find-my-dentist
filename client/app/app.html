@@ -1,0 +1,915 @@
+<template name="mainLayout">
+    <!-- {{>clouds}} -->
+    {{#transition in="bounceInUp:500" out="bounceOut:500"}}
+    <!--  -->
+    {{>Template.dynamic template=main}}
+    <!--  -->
+    {{/transition}}
+    <!--  -->
+    <!-- TEMPORARY -->
+    {{>cformAppo}}
+    <!-- <div id="cformDull"></div> -->
+    <div id="cf-contextx" role="cf-context" cf-context class="cf-contextx dark-theme inBoxx"></div>
+
+</template>
+<template name="clouds">
+    <div id="clouds-1" class="clouds"></div>
+    <div id="clouds-15" class="clouds"></div>
+    <div id="clouds-2" class="clouds"></div>
+    <div id="clouds-3" class="clouds"></div>
+    <div class="clouds cloudBox"></div>
+</template>
+<!-- Modal -->
+<template name="routeLayout">
+    {{#transition in="bounceInUp:500" out="bounceOut:500"}}
+    <!--  -->
+    {{>Template.dynamic template=content}}
+    <!--  -->
+    {{/transition}}
+</template>
+<!-- 
+    Full Screen Modal
+ -->
+<template name="shFSModal">
+    <!-- FullScreenModal -->
+    <div class="fsModal">
+        {{#if getSetting 'modal'}}
+        <a href="#" class="toggleSetting is-pulled-right has-text-white fixedClosed subtitle is-5" data-setting="modal">
+            <i class="pe-7s-close-circle fa-2x"></i>
+        </a>
+        {{/if}}
+        <div class="container">
+            <div class="columnsx sectionx is-scroll">
+                {{#transition in="bounceInUp:200" out="bounceOutDown:500"}}
+                {{>Template.dynamic template=modal}}
+                {{/transition}}
+            </div>
+        </div>
+    </div>
+</template>
+<!-- Main -->
+<template name="home">
+    <div class="is-vh is-fh columns is-marginless" style="background:url('/images/pexels-photo-1436129.jpeg') no-repeat; position: relative;background-size: cover;">
+        {{>clouds}}
+        <div class="column is-12 is-marginless is-paddingless inBoxMob">
+            <div class="columns is-marginless is-multiline is-centered">
+                <div class="column is-10 " style="line-height:65px;">
+                    <p>
+                        <h1 class="title is-2 has-text-white">
+                            Find My Dentist.
+                        </h1>
+                        <h2 class="subtitle is-4 has-text-white">
+                            For Travelers, Forginers and Tourists
+                        </h2>
+                    </p>
+                    <p><span class="subtitle is-4 has-text-white">I need a </span>
+                        <a href="#" class="button  is-large is-white is-outlined has-shadow-1x has-radius-2 setModal is-capitalized {{isValueSelected 'selected' 'spec' 'is-filled has-shadow-2'}}"
+                            data-template="mSpecs">{{getContent 'selected' 'spec' ''}} dentist</a></p>
+                    <span class="subtitle is-4 has-text-white"> for</span>
+                    <a href="#" class="button is-large is-radiusless is-white is-outlined  has-shadow-1x has-radius-2 setModal is-capitalized {{isValueSelected 'selected' 'cause' 'is-filled has-shadow-2'}}"
+                        data-template="mCause">{{getContent 'selected' 'cause' '....'}}</a>
+                    <span class="subtitle is-4 has-text-white">in</span>
+                    <a href="#" class="button is-large is-radiusless is-white is-outlined  has-shadow-1x has-radius-2 setModal is-capitalized {{isValueSelected 'selected' 'city' 'is-filled has-shadow-2'}}"
+                        data-template="mCities">{{getContent 'selected' 'city' 'city'}}</a>
+                    <span class="subtitle is-4 has-text-white">@</span>
+                    <a href="#" class="button is-large is-radiusless is-white is-outlined  has-shadow-1x has-radius-2 setModal is-capitalized {{isValueSelected 'selected' 'date' 'is-filled has-shadow-2'}}"
+                        data-template="mDate">{{getContent 'selected' 'date' 'date'}}</a>
+                    <span class="subtitle is-4 has-text-white"> speaking </span>
+                    <a href="#" class="button is-large is-radiusless is-white is-outlined  has-shadow-1x has-radius-2 setModal is-capitalized {{isValueSelected 'selected' 'lang' 'is-filled has-shadow-2'}}"
+                        data-template="mLanguage">{{getContent 'selected' 'lang' 'language'}}</a>
+                    <a href="#" class="button is-large is-radiusless is-white is-outlinedx  has-shadow-1 has-radius-2 setSetting icon icon-fix is-loadingx"
+                        data-setting="main" data-val="dentists"><i class="pe-7s-angle-right "></i></a>
+                    <!-- <a href="#" class="is-hidden-mobile is-hidden-tabletx button is-large is-radiusless is-white is-outlinedx  has-shadow-1 has-radius-2x setSetting iconx icon-fixx is-loadingx"
+                        data-setting="main" data-val="dentists"><i class="pe-7s-angle-right "></i> find</a> -->
+
+                    <p class="has-margin-top-5x">
+                        <br />
+                        <a class="button is-large is-rounded is-primary has-shadow-3 setSetting" data-setting="main"
+                            data-val="dentistMain">Are you dentist?</a>
+                    </p>
+                </div>
+                <div class="column is-8 is-offset-0 is-hidden-mobile is-hidden-tabletx is-hidden">
+                    <nav class="level is-mobile ">
+                        <div class="level-item">
+                            <div class="has-text-centered has-bg-50  has-radius-1">
+                                <p class="heading has-text-white">Denists</p>
+                                <p class="title has-text-white">500+</p>
+                            </div>
+                        </div>
+                        <div class="level-item has-text-centered">
+                            <div class="has-text-centered has-bg-50 has-radius-1">
+                                <p class="heading has-text-white">Operations</p>
+                                <p class="title has-text-white">300+</p>
+                            </div>
+                        </div>
+                        <div class="level-item has-text-centered">
+                            <div class="has-text-centered has-bg-50 has-radius-1">
+                                <p class="heading has-text-white">Countries</p>
+                                <p class="title has-text-white">30+</p>
+                            </div>
+                        </div>
+                        <div class="level-item has-text-centered">
+                            <div class="has-text-centered has-bg-50 has-radius-1">
+                                <p class="heading has-text-white">Languages</p>
+                                <p class="title has-text-white">4</p>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+<!--  -->
+<template name="homex">
+    <div class="mobBackground is-hidden-desktop"></div>
+    <!-- flight-sky-clouds-fly.jpg  -->
+    <!-- pexels-photo-691668.jpeg -->
+    <!-- pexels-photo-355770.jpeg  -->
+    <!-- pexels-photo-372098.jpeg -->
+    <!-- rio-de-janeiro-olympics-2016-niteroi-brazil-161173.jpeg -->
+    <section class="hero is-success is-fullheight is-hidden-mobile is-clipped" style="background:url('/images/pexels-photo-1436129.jpeg') no-repeat; position: relative;background-size: cover;">
+        <div id="clouds-1" class="clouds"></div>
+        <div id="clouds-15" class="clouds"></div>
+        <div id="clouds-2" class="clouds"></div>
+        <div id="clouds-3" class="clouds"></div>
+        <div class="clouds cloudBox"></div>
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-centeredx is-multiline" style="padding-top:0px;">
+                    <div class="column is-7">
+                        <h1 class="title is-3">
+                            Find My Dentist.
+                        </h1>
+                        <h2 class="subtitle is-5">
+                            For Travelers, Forginers and Tourists
+                        </h2>
+                    </div>
+                    <!--  -->
+                    <div class="column is-10 is-offset-0 columnsx" style="line-height:50px;">
+                        <span class="subtitle is-5">I need a </span>
+                        <a href="#" class="button  is-large is-white is-outlined has-shadow-1x has-radius-2 setModal"
+                            data-template="mSpecs">Dentist</a>
+                        <span> for</span>
+                        <a href="#" class="button is-large is-radiusless is-white is-outlined  has-shadow-1 has-radius-2 setModal"
+                            data-template="mCause">Canal
+                            Treatment</a>
+                        <span class="subtitle is-5">in</span>
+                        <a href="#" class="button is-large is-radiusless is-white is-outlined  has-shadow-1 has-radius-2 setModal"
+                            data-template="mCities">City...</a>
+                        <span class="subtitle is-5">@</span>
+                        <a href="#" class="button is-large is-radiusless is-white is-outlined  has-shadow-1 has-radius-2 setModal"
+                            data-template="mDate">Date</a> |
+                        <a href="#" class="button is-large is-radiusless is-white is-outlined  has-shadow-1 has-radius-2 setModal"
+                            data-template="mLanguage">Language</a>
+                        <a href="#" class="button is-large is-radiusless is-white is-outlinedx  has-shadow-1 has-radius-2 setSetting icon icon-fix is-loadingx"
+                            data-setting="main" data-val="dentists"><i class="pe-7s-angle-right "></i></a>
+                    </div>
+                </div>
+                <div class="column is-8 is-offset-0">
+                    <nav class="level is-mobile">
+                        <div class="level-item has-text-centered">
+                            <div>
+                                <p class="heading">Denists</p>
+                                <p class="title">500+</p>
+                            </div>
+                        </div>
+                        <div class="level-item has-text-centered">
+                            <div>
+                                <p class="heading">Operations</p>
+                                <p class="title">300+</p>
+                            </div>
+                        </div>
+                        <div class="level-item has-text-centered">
+                            <div>
+                                <p class="heading">Countries</p>
+                                <p class="title">30+</p>
+                            </div>
+                        </div>
+                        <div class="level-item has-text-centered">
+                            <div>
+                                <p class="heading">Languages</p>
+                                <p class="title">4</p>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Mobile -->
+    <div class="columns notification is-primary is-vh is-marginless is-radiusless is-hidden-desktop is-bold is-paddingless">
+        <p class="box is-radiusless content title is-3 is-marginless has-text-dark has-shadow-2">
+            Let's Help You find your dentist
+        </p>
+        <div class="column is-12 is-scroll has-margins-5">
+            <div class="btnBlockMobile">
+                <p class="notification is-primary is-bold is-paddingless is-marginlessx is-radiusless content">
+                    <span class="subtitle is-5">I need a </span>
+                    <a href="#" class="button  is-large is-white is-outlined has-shadow-1x has-radius-2 setModal"
+                        data-template="mSpecs">Dentist</a>
+                    <br /> <span class="subtitle is-5"> For </span>
+                    <a href="#" class="button is-large is-radiusless is-white is-outlined  has-shadow-1x has-radius-2 setModal"
+                        data-template="mCause">............</a><br />
+                    <span class="subtitle is-5">location:</span>
+                    <a href="#" class="button is-large is-radiusless is-white is-outlined  has-shadow-1x has-radius-2 setModal"
+                        data-template="mCities">City...</a><br />
+                    <span class="subtitle is-5">at:</span>
+                    <a href="#" class="button is-large is-radiusless is-white is-outlined  has-shadow-1x has-radius-2 setModal"
+                        data-template="mDate">Date...</a> <br />
+                    <span class="subtitle is-5">speaking:</span>
+                    <a href="#" class="button is-large is-radiusless is-white is-outlined  has-shadow-1x has-radius-2 setModal"
+                        data-template="mLanguage">Language...</a>
+                    <br />
+                </p>
+                <p class="has-text-centered  notification is-primary is-marginless is-paddingless ">
+                    <a href="#" class=" button is-large is-radiusless is-white is-fullwidth is-outlinedx has-shadow-1 has-radius-2 setSetting  is-loadingx has-button-block"
+                        data-setting="main" data-val="dentists"><i class="pe-7s-angle-right is-large-icon"></i></a>
+                </p>
+                <p class="contentx is-size-6x has-text-weight-bold content-text-fixed has-text-justified">
+                    <a href="#" class="">How is this works?</a>
+                    <a href="#" class="">Privacy Policy</a>
+                    <a href="#" class="">Quality System</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</template>
+<!-- mSpecs -->
+<template name="mSpecs">
+    <div class="section">
+        {{#each getSetting 'specs'}}
+        <p class="title is-3 content">
+            {{#transition in="slideInDown" out="bounceOut:500"}}
+            <a href="#" class="is-capitalized setSelectMod" data-val="{{this}}" data-type="selected.spec">{{this}}<br /></a>
+            {{/transition}}
+        </p>
+        {{/each}}
+    </div>
+</template>
+<!-- mCause -->
+<template name="mCause">
+    <div class="section ">
+        {{#each getSetting 'causes'}}
+        <p class="title is-3 content">
+            {{#transition in="slideInDown" out="bounceOut:500"}}
+            <a href="#" class="is-capitalized setSelectMod" data-val="{{this}}" data-type="selected.cause">{{this}}<br /></a>
+            {{/transition}}
+        </p>
+        {{/each}}
+    </div>
+</template>
+<!--  -->
+<!-- mCites -->
+<template name="mCities">
+    <div class="section setSelectModx" data-type="selected.city">
+        {{#each getSetting 'cities'}}
+        <p class="title is-3 content">
+            <a href="#" class="is-capitalized setSelectMod" data-val="{{this}}" data-type="selected.city">{{this}}<br /></a></p>
+        {{/each}}
+    </div>
+</template>
+<!--  -->
+<!-- mDate -->
+<template name="mDate">
+    <div class="section setSelectModx">
+        {{#each getSetting 'dates'}}
+        <p class="title is-3 content">
+            <a href="#" class="is-capitalized setSelectMod" data-val="{{this}}" data-type="selected.date">{{this}}<br /></a></p>
+        {{/each}}
+    </div>
+</template>
+<!--  -->
+<template name="mLanguage">
+    <div class="section setSelectModx">
+        {{#each getSetting 'languages'}}
+        <p class="title is-3 content">
+            <a href="#" class="is-capitalized setSelectMod" data-val="{{this}}" data-type="selected.lang">{{this}}<br /></a></p>
+        {{/each}}
+    </div>
+</template>
+<!-- mDate -->
+<template name="dentists">
+    <!-- {{>usersAside}} -->
+    <!-- <section class="hero is-success is-fullheight" style="background:url('/images/pexels-photo-287237.jpeg') no-repeat; position: relative;background-size: cover;"> -->
+    <section class="hero is-success is-fullheight is-hidden-mobile" style="background:url('/images/flight-sky-clouds-fly.jpg') no-repeat; position: relative;background-size: cover;">
+    {{>clouds}}
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-marginless">
+                    <div class="column is-2 is-paddingless">
+                        <div class="has-margin-top-fix margin-content">
+                            <p class="title"><span class="tagx is-radiusless is-large">{{randomStatic '9' '53'}} </span>
+                                Dentists</p>
+                            <p><span class="icon"><i class="fas fa-tooth"></i></span>Dental implant</p>
+                            <p><span class="icon"><i class="fas fa-globe"></i></span>Marmaris</p>
+                            <p><span class="icon"><i class="fas fa-calendar"></i></span>Next Week</p>
+                        </div>
+                    </div>
+                    <div class="column is-10 inBox is-scroll columns is-multiline is-marginless">
+                        <!-- <div class="column is-12">
+                            <h4 class="title is-3 has-text-white">Found : 7 Dentists available in 13 Nov</h4>
+                        </div> -->
+                        <!-- <p class="subtitle"></p> -->
+                        <div class="column is-12 columns is-multiline is-marginless ">
+                            {{#each repeat '7'}}
+                            <div class="column is-6 ">
+                                <div class="box is-radiusless  columns is-paddingless has-margin-5 has-shadow-1 has-radius-1">
+                                    <div class="column is-6 is-marginless is-paddingless avatarBox has-radius-1-image-left">
+                                        <figure class="image"><img src="http://i.pravatar.cc/256?img={{randomStatic '1' '70'}}"
+                                                class="has-radius-1-image-left"></figure>
+                                        <div class="lds-ripple has-loading">
+                                            <div></div>
+                                            <div></div>
+                                        </div>
+                                    </div>
+                                    <div class="column is-6 is-marginless">
+                                        <p class="name-box has-text-weight-bold">Dr. {{dummy 'names'}}</p>
+                                        <p class="contentx is-small has-text-weight-semibold has-text-info"><span class="tagx is-{{dummy 'tags'}} is-small">{{dummySetting
+                                                'specs'}}</span></p>
+                                        <p class="contentx is-small"><span class="icon"><i class="pe-7s-map"></i></span>
+                                            {{dummy 'address'}}, {{dummySetting 'cities'}}</p>
+                                        <p class="contentx is-small"><span class="icon"><i class="pe-7s-phone"></i></span>
+                                            {{dummy 'phones'}}</p>
+                                        <!--  -->
+                                        <a class="button is-info is-rounded is-small setSetting" data-setting="main"
+                                            data-val="dentistProfile">Profile</a>
+                                        <!--  -->
+                                        <a class="button is-primary is-rounded is-small setSetting" data-setting="main"
+                                            data-val="FormAppointment">Appointment</a>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                    <div class="column is-5">
+                        {{#if getSetting 'requestInq'}}
+                        <div class="box is-radiusless  columns is-paddingless animated slideInUp">
+                            <div class="column is-6 is-marginless is-paddingless" style="background:red;">
+                                <figure class="image"><img src="http://i.pravatar.cc/256?img={{randomStatic '1' '70'}}"></figure>
+                            </div>
+                            <div class="column is-6">
+                                <p>Dr Osama Alshisani</p>
+                                <a href="#" class="button is-large is-radiusless is-fullwidth setSetting" data-setting="sendInq"
+                                    data-val="true">Request</a>
+                            </div>
+                        </div>
+                        {{/if}}
+                        {{#if getSetting 'sendInq'}}
+                        <div class="box is-radiusless  columns is-paddingless animated slideInUp">
+                            <div class="column is-6 is-marginless is-paddingless" style="background:red;">
+                                <figure class="image"><img src="http://i.pravatar.cc/256?img={{randomStatic '1' '70'}}"></figure>
+                            </div>
+                            <div class="column is-6">kllkdslks</div>
+                        </div>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="mobBackground is-hidden-desktop"></div>
+    <div class="columns notification is-primary  is-vhx is-marginless is-radiusless is-paddingless is-hidden-desktop">
+
+        <div class="column is-12 columns is-multiline is-marginless  is-scrollx">
+
+            <div class="column is-12">
+                <div class="box is-radiuslessx has-shadow-1 has-radius-1 content  is-marginless has-text-dark has-shadow-2">
+                    <p class="title is-4">Choose your dentist</p>
+                    <p class="subtitle is-6 has-text-grey">Check profiles AND/ OR Get an appointment</p>
+                    <p class="subtitle is-7 has-text-grey is-pulled-rightx"><span href="#" class="tag is-dark is-rounded is-small">login</span>
+                        for direct call</p>
+                </div>
+            </div>
+
+            {{#each repeat '7'}}
+            <div class="column is-6 ">
+                <div class="box is-radiuslessx  columns is-paddingless has-margin-5 has-shadow-1 has-radius-1 is-clipped">
+                    <div class="column is-6 is-marginless is-paddingless avatarBox has-radius-1-image-leftx is-clipped"
+                        style="background:#333;">
+                        <figure class="image"><img src="http://i.pravatar.cc/456?img={{randomStatic '1' '70'}}" class="has-radius-1-image-leftx"></figure>
+                        <div class="lds-ripple has-loading">
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="column is-6 is-marginless">
+                        <p class="name-box has-text-weight-bold">Dr. {{dummy 'names'}}</p>
+                        <p class="contentx is-small has-text-weight-semibold has-text-info"><span class="tagx is-{{dummy 'tags'}} is-small">{{dummySetting
+                                'specs'}}</span></p>
+                        <p class="contentx is-small"><span class="icon"><i class="pe-7s-map"></i></span>
+                            {{dummy 'address'}}, {{dummySetting 'cities'}}</p>
+                        <p class="contentx is-small"><span class="icon"><i class="pe-7s-phone"></i></span>
+                            {{dummy 'phones'}}</p>
+                        <!--  -->
+                        <div class="columns is-mobile is-paddinglessx is-marginless">
+                            <div class="column is-6 is-paddinglessx is-marginlessx"><a class="button is-info is-rounded is-largex is-fullwidth setSetting"
+                                    data-setting="main" data-val="dentistProfile">Profile</a></div>
+                            <div class="column is-6 is-paddinglessx is-marginlessx"><a class="button is-primary is-rounded is-largex is-fullwidth setSetting"
+                                    data-setting="main" data-val="FormAppointment">Appointment</a></div>
+                        </div>
+                        <div class=" column is-12">
+                            <a class="button is-success is-rounded is-largex is-fullwidth" href="tel:+905532180883">Call</a>
+                        </div>
+                        <!--  -->
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</template>
+<!-- DentistProfile -->
+<template name="dentistProfile">
+    <section class="hero is-success is-fullheight is-hidden-mobile" style="background:url('/images/flight-sky-clouds-fly.jpg') no-repeat; position: relative;background-size: cover;">
+        <div id="clouds-1" class="clouds is-hidden-mobile is-hidden-mobile"></div>
+        <div id="clouds-2" class="clouds is-hidden-mobile is-hidden-mobile"></div>
+        <div id="clouds-3" class="clouds is-hidden-mobile is-hidden-mobile"></div>
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-centered">
+                    <div class="column is-10 inBox is-scroll columns is-multiline">
+                        <div class="column is-8">
+                            <div class="box is-radiusless has-shadow-1 has-radius-1">
+                                <p class="name-box has-text-weight-bold title has-text-dark">Dr. {{dummy 'names'}}</p>
+                                <p class="contentx is-small has-text-weight-semibold has-text-info"><span class="tagx is-{{dummy 'tags'}} is-small">{{dummySetting
+                                        'specs'}}</span></p>
+                                <p class="contentx is-small"><span class="icon"><i class="pe-7s-map"></i></span>
+                                    {{dummy 'address'}}, {{dummySetting 'cities'}}</p>
+                                <p class="contentx is-small"><span class="icon"><i class="pe-7s-phone"></i></span>
+                                    {{dummy 'phones'}}</p>
+                                <!-- <p class="content is-small  subtitle is-6 has-text-dark">Procedures</p>                                 -->
+                                <p class="tags is-capitalized">
+                                    <span class="tag is-white is-largex">Procedures :</span>
+                                    {{#each dummySampleArray 'causes'}}
+                                    <span class="tag is-light">{{this}}</span>
+                                    {{/each}}
+                                </p>
+                                <div class="contentx is-small">
+                                    <p class="contentx">Response</p>
+                                    <p><progress class="progress is-success" value="84" max="100">84%</progress></p>
+                                    <p class="contentx">Rate</p>
+                                    <p><progress class="progress is-success" value="95" max="100">95%</progress></p>
+                                    <p class="contentx">Patient Satisfaction</p>
+                                    <p><progress class="progress is-success" value="92" max="100">90%</progress></p>
+                                </div>
+                            </div>
+                            <!--  -->
+                            <div class="box is-radiusless has-shadow-1 has-radius-1">
+                                <!-- Reviews -->
+                                {{#each repeat '10'}}
+                                <article class="media">
+                                    <figure class="media-left">
+                                        <p class="image is-64x64">
+                                            <img src="http://i.pravatar.cc/128?img={{randomStatic '1' '70'}}" class="">
+                                        </p>
+                                    </figure>
+                                    <div class="media-content">
+                                        <div class="content is-small">
+                                            <p>
+                                                <strong>{{dummy 'names'}}</strong> <small>@{{dummy 'fname'}}</small>
+                                                <small>{{dummySetting 'dates'}}</small>
+                                                <br>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare
+                                                magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa
+                                                sem. Etiam finibus odio quis feugiat facilisis.
+                                            </p>
+                                        </div>
+                                        <nav class="level is-mobile">
+                                            <div class="level-left">
+                                                <a class="level-item">
+                                                    <span class="icon is-small"><i class="fa fa-reply"></i></span>
+                                                </a>
+                                                <a class="level-item">
+                                                    <span class="icon is-small"><i class="fa fa-retweet"></i></span>
+                                                </a>
+                                                <a class="level-item">
+                                                    <span class="icon is-small"><i class="fa fa-heart"></i></span>
+                                                </a>
+                                            </div>
+                                        </nav>
+                                    </div>
+                                    <div class="media-right">
+                                        <!-- <button class="delete"></button> -->
+                                        {{#if dummy 'bool'}}
+                                        <i class="far fa-thumbs-up" aria-hidden="true"></i>
+                                        {{else}}
+                                        <i class="far fa-thumbs-down" aria-hidden="true"></i>
+                                        {{/if}}
+                                    </div>
+                                </article>
+                                {{/each}}
+                                <!--  -->
+                            </div>
+                            <!--  -->
+                            <div class="box is-radiusless has-shadow-1 has-radius-1">
+                                <div class="">
+                                    <textarea class="input is-radiusless has-50-height" rows="100" cols="50"
+                                        placeholder="Write Your Message"></textarea>
+                                </div>
+                                <p class="contentx has-padding-top-n">
+                                    <a href="#" class="button is-radiusless is-fullwidthx is-large is-primary is-pulled-right">Send</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="column is-4">
+                            <div class="box is-radiusless has-shadow-1 has-radius-1">
+                                <figure class="image has-radius-3"><img src="http://i.pravatar.cc/256?img={{randomStatic '1' '70'}}"
+                                        class=""></figure>
+                            </div>
+                            <div class="box is-radiusless has-shadow-1 has-radius-1">
+                                <p class="content">
+                                    <a href="#" class="button has-radius-1 is-fullwidth is-large is-info setSetting"
+                                        data-setting="main" data-val="FormAppointment">Appointment</a>
+                                </p>
+                                <p>
+                                    <a href="tel:+905532180883" class="button has-radius-1 is-fullwidth is-large is-primary">Call</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- MOBILE VERSION* -->
+    <div class="mobBackgroundx is-hidden-desktop"></div>
+    <div class="section columns is-hidden-desktop is-hidden-tablet">
+        <div class="column is-8">
+            <div class="box is-radiusless has-shadow-1 has-radius-1 is-paddingless is-clipped">
+                <figure class="image has-radius-3x"><img src="http://i.pravatar.cc/256?img={{randomStatic '1' '70'}}"
+                        class=""></figure>
+                <div class="notification is-white">
+                    <p class="name-box has-text-weight-bold title has-text-dark">Dr. {{dummy 'names'}}</p>
+                    <p class="contentx is-small has-text-weight-semibold has-text-info"><span class="tagx is-{{dummy 'tags'}} is-small">{{dummySetting
+                            'specs'}}</span></p>
+                    <p class="contentx is-small"><span class="icon"><i class="pe-7s-map"></i></span>
+                        {{dummy 'address'}}, {{dummySetting 'cities'}}</p>
+                    <p class="contentx is-small"><span class="icon"><i class="pe-7s-phone"></i></span>
+                        {{dummy 'phones'}}</p>
+                    <!-- <p class="content is-small  subtitle is-6 has-text-dark">Procedures</p>                                 -->
+                    <p class="tags is-capitalized">
+                        <span class="tag is-white is-largex">Procedures :</span>
+                        {{#each dummySampleArray 'causes'}}
+                        <span class="tag is-light">{{this}}</span>
+                        {{/each}}
+                    </p>
+                </div>
+                <div class="notification is-white is-marginless">
+                    <p class="contentx">Response</p>
+                    <p><progress class="progress is-success" value="84" max="100">84%</progress></p>
+                    <p class="contentx">Rate</p>
+                    <p><progress class="progress is-success" value="95" max="100">95%</progress></p>
+                    <p class="contentx">Patient Satisfaction</p>
+                    <p><progress class="progress is-success" value="92" max="100">90%</progress></p>
+                </div>
+            </div>
+            <!--  -->
+            <div class="box is-radiusless has-shadow-1 has-radius-1 is-paddinglessx is-clipped is-white-bgx">
+                <!-- Reviews -->
+                {{#each repeat '10'}}
+                <article class="media">
+                    <figure class="media-left">
+                        <p class="image is-64x64">
+                            <img src="http://i.pravatar.cc/128?img={{randomStatic '1' '70'}}" class="">
+                        </p>
+                    </figure>
+                    <div class="media-content">
+                        <div class="content is-small">
+                            <p>
+                                <strong>{{dummy 'names'}}</strong> <small>@{{dummy 'fname'}}</small>
+                                <small>{{dummySetting 'dates'}}</small>
+                                <br>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare
+                                magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa
+                                sem. Etiam finibus odio quis feugiat facilisis.
+                            </p>
+                        </div>
+                        <nav class="level is-mobile">
+                            <div class="level-left">
+                                <a class="level-item">
+                                    <span class="icon is-small"><i class="fa fa-reply"></i></span>
+                                </a>
+                                <a class="level-item">
+                                    <span class="icon is-small"><i class="fa fa-retweet"></i></span>
+                                </a>
+                                <a class="level-item">
+                                    <span class="icon is-small"><i class="fa fa-heart"></i></span>
+                                </a>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="media-right">
+                        <!-- <button class="delete"></button> -->
+                        {{#if dummy 'bool'}}
+                        <i class="far fa-thumbs-up" aria-hidden="true"></i>
+                        {{else}}
+                        <i class="far fa-thumbs-down" aria-hidden="true"></i>
+                        {{/if}}
+                    </div>
+                </article>
+                {{/each}}
+                <!--  -->
+            </div>
+            <!--  -->
+            <div class="box notificationx is-whitex is-radiusless has-shadow-1 has-radius-1 is-paddinglessx">
+                <div class="">
+                    <textarea class="input is-radiusless has-50-height" rows="100" cols="50" placeholder="Write Your Message"></textarea>
+                </div>
+                <p class="contentx has-padding-top-n">
+                    <a href="#" class="button is-radiusless is-fullwidthx is-large is-primary is-pulled-right">Send</a>
+                </p>
+            </div>
+        </div>
+        <div class="column is-4">
+            <div class="boxx is-radiusless has-shadow-1x has-radius-1">
+                <p class="content">
+                    <a href="#" class="button  is-fullwidth is-large is-info has-radius-2 setSetting" data-setting="main"
+                        data-val="FormAppointment">Appointment</a>
+                </p>
+                <p>
+                    <a href="tel:+905532180883" class="button  is-fullwidth   has-radius-2 is-large is-primary">Call</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</template>
+<!-- FormAppointment -->
+<template name="FormAppointment">
+    <div id="cf-context" class="cf-context dark-theme inBoxx"></div>
+    <!-- FORM ENDED -->
+    <section class="hero is-success is-fullheight is-hidden" style="background:url('/images/flight-sky-clouds-fly.jpg') no-repeat; position: relative;background-size: cover;">
+        <div id="clouds-1" class="clouds is-hidden-mobile"></div>
+        <div id="clouds-2" class="clouds is-hidden-mobile"></div>
+        <div id="clouds-3" class="clouds is-hidden-mobile"></div>
+        <div class="hero-body pos-sendback">
+            <div class="container">
+                <div class="columns is-centeredx">
+                    <div class="column is-5 inBox is-scroll">
+                        <div class="box is-radiusless  columns is-paddingless has-margin-5 has-shadow-0 has-radius-1">
+                            <div class="column is-6 is-marginless is-paddingless avatarBox has-radius-1-image-left">
+                                <figure class="image"><img src="http://i.pravatar.cc/256?img={{randomStatic '1' '70'}}"
+                                        class="has-radius-1-image-left"></figure>
+                                <div class="lds-ripple has-loading">
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                            <div class="column is-6 is-marginless">
+                                <p class="name-box has-text-weight-bold">Dr. {{dummy 'names'}}</p>
+                                <p class="contentx is-small has-text-weight-semibold has-text-info"><span class="tagx is-{{dummy 'tags'}} is-small">{{dummySetting
+                                        'specs'}}</span></p>
+                                <p class="contentx is-small"><span class="icon"><i class="pe-7s-map"></i></span>
+                                    {{dummy 'address'}}, {{dummySetting 'cities'}}</p>
+                                <p class="contentx is-small"><span class="icon"><i class="pe-7s-phone"></i></span>
+                                    {{dummy 'phones'}}</p>
+                                <!--  -->
+                                <a class="button is-info is-rounded is-small setSetting" data-setting="main" data-val="dentistProfile">Profile</a>
+                                <!--  -->
+                                <a href="tel:+905532180883" class="button is-rounded is-small is-primary"><i class="fa fa-phone"></i></a>
+                            </div>
+                        </div>
+                        <div class="box is-radiusless  columns is-paddingless has-margin-5 has-shadow-0 has-radius-1 is-multiline has-padding-top-n">
+                            <div class="column is-12">
+                                <p class="contentx">Response</p>
+                                <p><progress class="progress is-success" value="84" max="100">84%</progress></p>
+                                <p class="contentx">Rate</p>
+                                <p><progress class="progress is-success" value="95" max="100">95%</progress></p>
+                                <p class="contentx">Patient Satisfaction</p>
+                                <p><progress class="progress is-success" value="92" max="100">90%</progress></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-6 inBox is-scroll">
+                        <div class="box has-shadow-0 has-radius-1 has-margin-5">
+                            <!--  -->
+                            <p class="title is-3 has-text-grey-dark">Get an appointment</p>
+                            <div class="field">
+                                <div class="control">
+                                    <input id="qps" name="" autocomplete="off" type="text" placeholder="Full name"
+                                        class="input is-rounded is-large" required="">
+                                </div>
+                            </div>
+                            <!--  -->
+                            <div class="field">
+                                <div class="control">
+                                    <input id="wewew" name="" autocomplete="off" type="text" placeholder="Phone Number"
+                                        class="input is-rounded is-large" required="">
+                                </div>
+                            </div>
+                            <!--  -->
+                            <div class="field">
+                                <div class="control">
+                                    <input id="wwwqwqq" name="" autocomplete="off" type="date" data-display-mode="dialog"
+                                        placeholder="Date" class="input is-rounded is-large" required="">
+                                </div>
+                            </div>
+                            <!--  -->
+                            <!--  -->
+                            <div class="field">
+                                <div class="control">
+                                    <textarea class="input has-radius-2 is-large has-50-height" autocomplete="off"
+                                        placeholder="message"></textarea>
+                                </div>
+                            </div>
+                            <!--  -->
+                            <div class="columns is-hidden">
+                                <div class="column field">
+                                    <div class="control">
+                                        <input id="xasd" name="" type="text" placeholder="From" class="input is-rounded is-large is-6"
+                                            required="">
+                                    </div>
+                                </div>
+                                <div class="column field">
+                                    <div class="control">
+                                        <input id="wew" name="" type="text" placeholder="To" class="input is-rounded is-large is-6"
+                                            required="">
+                                    </div>
+                                </div>
+                            </div>
+                            <!--  -->
+                            <!--  -->
+                            <div class="field">
+                                <div class="control">
+                                    <a href="#" class="button is-primary is-rounded is-fullwidth is-large">submit</a>
+                                </div>
+                            </div>
+                            <!--  -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <div id="cf-context" role="cf-context" cf-context></div> -->
+    <div class="mobBackground is-hidden-desktop"></div>
+    <div class="section is-marginless is-paddingless is-hiddenx">
+        <div class="column is-12 inBoxMob pos-sendback">
+            <div class="box has-shadow-0 has-radius-1 has-margin-5x is-marginless ">
+            </div>
+        </div>
+    </div>
+</template>
+<!--  -->
+<!-- mSpecs -->
+<template name="mDateForm">
+    <div class="section">
+        <!--  -->
+        <input id="date-modal" name="Date" autocomplete="off" type="date" data-display-mode="inline" placeholder="Date"
+            class="input is-rounded is-large" required="" value="09/25/2018">
+    </div>
+</template>
+<!--  -->
+<template name="formSuccess">
+    <!-- <div class="mobBackground is-hidden-desktopx"></div> -->
+    <div class="columns is-marginless is-paddinglessx is-fh is-centered">
+        <div class="column is-6 inBoxMob is-marginless has-padding-5">
+            <div class="box has-radius-2 has-text-centered is-va">
+                <div class="imagex is-128x128  image-topx title is-1 has-text-primary">
+                    <!-- <img src="/images/checked.png"> -->
+                    <i class="pe-7s-check"></i>
+                </div>
+                <p class="contentx subtitle is-5 has-text-grey-dark">Your message has been sent, <br /> Will get back
+                    to
+                    you soon.</p>
+                <p class="content">in a hurry?</p>
+                <p class="content"><a href="tel:+905532180883" class="button is-rounded is-primary is-large is-fullwidth">Call</a></p>
+                <p class="content"><a href="#" class="button is-rounded is-dark is-outlined is-large is-fullwidth setSetting"
+                        data-setting="main" data-val="home">Home</a></p>
+            </div>
+        </div>
+    </div>
+</template>
+<!--  -->
+<template name="cformAppo">
+    <form class="form-horizontal pos-sendback is-hiddenx" id="cform" cf-formx cf-prevent-autofocusx>
+        <!--  -->
+        <p class="title is-3 has-text-grey-dark">Get an appointment</p>
+        <div class="field">
+            <div class="control">
+                <label class="label is-hidden" for="name-x">Full Name</label>
+                <input id="name-x" cf-questions="Hi there! What's your name?" cf-label="Full Name" name="Name"
+                    autocomplete="off" type="text" placeholder="Full name" class="input is-rounded is-large" required="">
+            </div>
+        </div>
+        <!--  -->
+        <div class="field">
+            <label class="label is-hidden" for="phone-x">What is your phone number?</label>
+            <div class="control">
+                <input id="phone-x" name="PhoneNumber" autocomplete="off" type="text" placeholder="Phone Number" class="input is-rounded is-large"
+                    required="">
+            </div>
+        </div>
+        <!--  -->
+        <div class="field">
+            <label class="label is-hidden" for="date-x">Do You want to choose the date?</label>
+            <div class="control">
+                <input id="date-x" name="Date" autocomplete="off" type="datex" data-display-mode="dialog" placeholder="Date"
+                    class="input is-rounded is-large" required="">
+            </div>
+        </div>
+        <!--  -->
+        <!--  -->
+        <div class="field">
+            <label class="label is-hidden" for="message-x">Would you like to attach a message?</label>
+            <div class="control">
+                <textarea id="message-x" name="message" class="input has-radius-2 is-large has-50-height" autocomplete="off"
+                    placeholder="message"></textarea>
+            </div>
+        </div>
+        <!--  -->
+        <div class="columns is-hidden">
+            <div class="column field">
+                <div class="control">
+                    <input name="" type="text" placeholder="From" class="input is-rounded is-large is-6" required="">
+                </div>
+            </div>
+            <div class="column field">
+                <div class="control">
+                    <input name="" type="text" placeholder="To" class="input is-rounded is-large is-6" required="">
+                </div>
+            </div>
+        </div>
+        <!-- Custom Stuff -->
+        <!-- <input type="text" cf-input-placeholder="This is a custom placeholder text" /> -->
+        <!--  -->
+        <!--  -->
+        <!-- <cf-robot-message cf-questions="Let's get started <button type='submit' class='tag is-dark Action'>ham</button>"></cf-robot-message> -->
+        <div class="field">
+            <div class="control">
+                <a href="#" class="button is-primary is-rounded is-fullwidth is-large setSetting" data-setting="main"
+                    data-val="formSuccess">submit</a>
+            </div>
+        </div>
+        <!--  -->
+    </form>
+</template>
+<!--  -->
+<!-- dentistMain -->
+<template name="dentistMain">
+    <div class="section is-paddinglessx inBoxMobx is-mob-container section">
+        <div class="columns is-marginless is-paddingless is-multiline is-centered has-content-centered-fix is-mob-body has-mob-head has-mob-footer">
+
+            <!-- {{#each dentistIntro}} -->
+            <!-- {{#each repeat 5}} -->
+            <div class="column is-10 is-marginlessx has-radius-2 notificationx is-primary is-radiusless has-bg-img"
+                data-image-src="http://dummy-images.com/abstract/dummy-480x270-DesiccationCracks.jpg" style="background-imagex:url(http://img01.deviantart.net/5e4b/i/2015/112/c/5/mandelbrot_62____courage_to_leave___by_olbaid_st-d646sjv.jpg)">
+                <p><i class="pe-7s-hourglass subtitle is-1"></i></p>
+                <p class="subtitle is-4">Time effective</p>
+                <p class="subtitle is-7">For Patients and Doctors</p>
+            </div>
+            <!--  -->
+            <div class="column is-10 is-marginlessx has-radius-2 notificationx is-primary is-radiusless has-bg-img"
+                data-image-src="http://dummy-images.com/abstract/dummy-480x270-DesiccationCracks.jpg" style="background-imagex:url(http://img01.deviantart.net/5e4b/i/2015/112/c/5/mandelbrot_62____courage_to_leave___by_olbaid_st-d646sjv.jpg)">
+                <p><i class="pe-7s-world subtitle is-1"></i></p>
+                <p class="subtitle is-4">Better communication</p>
+                <p class="subtitle is-7">Doctor who speaks your language</p>
+            </div>
+            <!-- pe-7s-smile -->
+            <!-- pe-7s-target pe-7s-medal pe-7s-map-marker  -->
+            <!-- {{/each}} -->
+            <div class="column is-10 is-marginlessx has-radius-2 notificationx is-primary is-radiusless has-bg-img"
+                data-image-src="http://dummy-images.com/abstract/dummy-480x270-DesiccationCracks.jpg" style="background-imagex:url(http://img01.deviantart.net/5e4b/i/2015/112/c/5/mandelbrot_62____courage_to_leave___by_olbaid_st-d646sjv.jpg)">
+                <p><i class="pe-7s-map-2 subtitle is-1"></i></p>
+                <p class="subtitle is-4">Location wise</p>
+                <p class="subtitle is-7">Find the dentist near to your location</p>
+            </div>
+
+            <div class="column is-10 is-marginlessx has-radius-2 notificationx is-primary is-radiusless has-bg-img"
+                data-image-src="http://dummy-images.com/abstract/dummy-480x270-DesiccationCracks.jpg" style="background-imagex:url(http://img01.deviantart.net/5e4b/i/2015/112/c/5/mandelbrot_62____courage_to_leave___by_olbaid_st-d646sjv.jpg)">
+                <p><i class="pe-7s-medal subtitle is-1"></i></p>
+                <p class="subtitle is-4">Selective</p>
+                <p class="subtitle is-7">We choose the most high rated selective group for you</p>
+            </div>
+
+            <div class="column is-10 is-marginlessx has-radius-2 notificationx is-primary is-radiusless has-bg-img"
+                data-image-src="http://dummy-images.com/abstract/dummy-480x270-DesiccationCracks.jpg" style="background-imagex:url(http://img01.deviantart.net/5e4b/i/2015/112/c/5/mandelbrot_62____courage_to_leave___by_olbaid_st-d646sjv.jpg)">
+                <p><i class="pe-7s-smile subtitle is-1"></i></p>
+                <p class="subtitle is-4">Patient Satisfcation is our target</p>
+                <p class="subtitle is-7">We believe quality is the key to success so we focus Patients</p>
+            </div>
+
+            <!-- <div class="column is-10"> -->
+
+            <!-- </div> -->
+        </div>
+        <div class="is-mob-footer">
+            <a href="#" class="button is-rounded is-large is-fullwidth is-primary setSettings" data-settings="register:t,main:dentistLogin">join</a>
+        </div>
+    </div>
+</template>
+<!-- dentistMain -->
+<template name="dentistLogin">
+    <div class="section">
+        {{>login}}
+    </div>
+</template>
+<!-- DentistForm -->
+<template name="dentistForm">
+</template>
+<!--  -->
+<!-- DentistOwnProfile -->
+<template name="dentistOwnProfile">
+</template>
