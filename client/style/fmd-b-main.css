@@ -1,0 +1,230 @@
+body {
+  padding: 0px;
+  margin:0px;
+  background:#f6f6f6;
+  height: auto;
+  min-height:100vh;
+}
+
+.inBox{
+  height:85vh;
+  overflow:auto;
+  /* overflow-y:hidden; */
+  overflow-x:hidden;
+
+}
+
+/*  */
+.mbutton{
+
+  -webkit-animation: pulseI 1s !important;
+  animation: pulseI 1s !important;  
+
+  transition: all 5.5s easeIn !important;
+  -webkit-transition: all 5.5s easeIn !important;
+}
+
+.mbutton:hover{
+  -webkit-animation: pulse 1s !important;
+  animation: pulse 1s !important;
+  
+}
+
+
+
+.button.is-white:hover{
+  transition: all 5.5s easeIn !important;
+  -webkit-transition: all 5.5s easeIn !important;
+  /* -webkit-animation: pulse 1s; */
+   /* animation: pulse 1s; */
+   /* box-shadow:3px 10px 40px #444 !important; */
+
+}
+
+/*  */
+
+.has-shadow-0{
+  box-shadow:4px 18px 20px rgba(0,0,0,0.1);
+}
+
+.has-shadow-1{
+  box-shadow:2px 2px 30px rgba(0,0,0,0.2);
+}
+.has-radius-1{
+  border-radius:5px !important;
+}
+
+.has-radius-2{
+  border-radius:30px !important;
+  /* border-radius: 290486px; */
+}
+
+.has-radius-3{
+  border-radius:40px !important;
+  /* border-radius: 290486px; */
+}
+.has-radius-1-image-left{
+  border-top-left-radius:5px !important;
+  border-bottom-left-radius:5px !important;
+}
+
+/* shadow-mob */
+.has-shadow-3{
+  box-shadow:4px 8px 20px rgba(0,0,100,0.04);
+}
+.has-radius-3{
+  border-radius:12px !important;
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,.is-flowed::-webkit-scrollbar,.is-scroll::-webkit-scrollbar,.fsModal::-webkit-scrollbar{
+  display: none; /*  might be enought */
+  background: transparent;
+  visibility: hidden;
+  width: 0px;
+}
+
+.has-padding-5{
+  padding:5px !important;
+}
+.has-margin-5{
+  margin:5px 5px 15px 5px !important;
+}
+/*  */
+.avatarBox{
+  width:100%;
+  height:200px;
+  display:block;
+  overflow:hidden;
+  background:#464646  no-repeat center;
+}
+.has-loading{
+  margin:20% 20%;
+}
+.lds-ripple {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid #fff;
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+@keyframes lds-ripple {
+  0% {
+    top: 28px;
+    left: 28px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: -1px;
+    left: -1px;
+    width: 58px;
+    height: 58px;
+    opacity: 0;
+  }
+}
+
+/*  */
+.icon-fix{
+  margin:3px 0 5px 10px;
+}
+/* 
+  Buttons Draw 
+  https://codepen.io/giana/pen/yYBpVY
+*/
+
+.buttonx {
+  background: none;
+  border: 0;
+  box-sizing: border-box;
+  /* margin: 1em; */
+  /* padding: 1em 2em; */
+  border-radius:3px !important;
+  box-shadow: inset 0 0 0 2px #f45e61;
+  color: #f45e61;
+  font-size: inherit;
+  font-weight: 700;
+  position: relative;
+  vertical-align: middle;
+}
+.buttonx::before, .buttonx::after {
+  box-sizing: inherit;
+  content: '';
+  position: absolute;
+  /* width: 100%; */
+  /* height: 100%; */
+}
+
+.draw {
+  transition: color 0.25s;
+}
+.draw::before, .draw::after {
+  border: 2px solid transparent;
+  width: 0;
+  height: 0;
+}
+.draw::before {
+  top: 0;
+  left: 0;
+}
+.draw::after {
+  bottom: 0;
+  right: 0;
+}
+.draw:hover {
+  color: #60daaa;
+}
+.draw:hover::before, .draw:hover::after {
+  width: 100%;
+  height: 100%;
+}
+.draw:hover::before {
+  border-top-color: #60daaa;
+  border-right-color: #60daaa;
+  transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+}
+.draw:hover::after {
+  border-bottom-color: #60daaa;
+  border-left-color: #60daaa;
+  transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
+}
+
+/* content x */
+.contentx{
+  margin:3px 0 3px;
+  font-size:12px !important;
+  padding:0 0 3px 2px;
+  overflow:hidden;
+}
+
+.has-50-height{
+  height:7em;
+}
+
+.has-padding-top-n{
+  padding-top:10px !important;
+}
+
+.has-margin-top-fix{
+  margin-top:40px!important;
+}
+
+.margin-content *{
+  margin:5px 0 4px 0;
+}
+
+.is-filled{
+  background:#fff !Important;
+  color:#333 !important;
+}
+
+/*  */

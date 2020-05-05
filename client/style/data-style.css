@@ -1,0 +1,11 @@
+/*
+
+*/
+
+.has-bg-img::after{
+    /* background:#666  attr(data-image-src url) !important; */
+    /* background-url:attr(data-image-src); */
+    /* content:attr(data-image-src) */
+    background-image : attr(data-image-src url);
+
+}

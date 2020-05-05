@@ -1,0 +1,127 @@
+.mobHolder {
+    position: relative;
+    width: 100%;
+    padding: 0px !important;
+    /* temp */
+    padding-top: 30px !important;
+}
+
+.has-topbar {
+    padding-top: 30px !important;
+}
+
+.mobFooter {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1003;
+    /* padding: 10px; */
+}
+
+.mobileFix {
+    margin: 50px !important;
+}
+
+
+/* used for titlebar */
+
+.isFixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1004;
+}
+
+
+/*  */
+
+.is-rounded-x {
+    border-radius: 40px !important;
+}
+
+.is-rounded-xx {
+    border-radius: 20px !important;
+}
+
+.is-borded {
+    border: 2px solid #ccc;
+}
+
+.is-darker-bg {
+    /* padding-bottom:35px; */
+    background: whitesmoke;
+}
+
+.is-fullvh {
+    min-height: 100vh !important;
+    height: auto;
+}
+
+.has-shadow-darker {
+    box-shadow: 2px 9px 10px #eee;
+}
+
+
+/*  */
+
+::-webkit-input-placeholder {
+    font-size: 15px;
+    /* padding: 4px 5px 5px 5px !important; */
+}
+
+ ::-moz-placeholder {
+    font-size: 15px;
+    /* padding: 4px 5px 5px 5px !important; */
+}
+
+ :-ms-input-placeholder {
+    font-size: 15px;
+    /* padding: 4px 5px 5px 5px !important; */
+}
+
+ :-moz-placeholder {
+    font-size: 15px;
+}
+
+
+/*  */
+
+.is-orange {
+    margin: 10px !important;
+    background: orangered;
+    color: #fff;
+}
+
+.isEard {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Boxed Mobile Menu. */
+
+.is-mob-padd-box {
+    height: 98px !important;
+    padding: 15px 3px 10px 3px !important;
+}
+
+.is-mob-padd-box .image {
+    margin: 0px auto !important;
+    margin-bottom: 5px !important;
+}
+
+.is-borderless {
+    border: 0px solid #000 !important;
+    padding: 4px 5px 5px 10px !important;
+}
+
+.has-small-padding{
+    padding: 12px !important;
+}
+
+.show{
+    display: block;
+}
