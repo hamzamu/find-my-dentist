@@ -13,7 +13,7 @@
     "bcrypt": "^3.0.8",
     "bulma-calendar": "^5.1.4",
     "conversational-form": "^0.9.90",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "meteor-node-stubs": "^0.4.1"
   },
   "meteor": {
