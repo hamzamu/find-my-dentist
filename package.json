@@ -10,7 +10,7 @@
   "dependencies": {
     "@babel/runtime": "^7.9.6",
     "@fortawesome/fontawesome-free": "^5.13.0",
-    "bcrypt": "^3.0.8",
+    "bcrypt": "^5.0.0",
     "bulma-calendar": "^5.1.4",
     "conversational-form": "^0.9.90",
     "lodash": "^4.17.15",
